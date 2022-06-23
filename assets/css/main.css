@@ -38,10 +38,6 @@ body {
     }
 }
 
-.chatbot {
-    display: none;
-}
-
 .navbar {
     animation: expand 0.8s linear;
     height: 80px;

@@ -45,9 +45,11 @@ let queryParams = (() => {
     }
     return tempObj;
 })();
-if (queryParams.allowspecialaccess = '987654321') {
+if (queryParams.allowspecialaccess == '987654321') {
     $('.chatbot').show();
     console.log("Granted");
+} else {
+    $('.chatbot').remove();
 }
 
 function showChatbot() {
