@@ -74,6 +74,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 0;
+    left: 0;
 }
 
 .sidebar .toggler {
@@ -110,6 +112,21 @@ body {
     left: 69px;
 }
 
+@media (max-width: 576px) {
+    .sidebar.shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-evenly;
+        padding: 20px 30px;
+    }
+    .sidebar.shown .toggler {
+        left: calc(100% - 66px);
+        top: 20px;
+    }
+}
+
 .sidebar.shown .toggler svg {
     transform: rotate(180deg);
     fill: var(--cinza-600);
@@ -134,7 +151,7 @@ body {
     transform: scale(1);
 }
 
-.sidebar button:not(.toggler):active img{
+.sidebar button:not(.toggler):active img {
     transform: scale(0.6);
 }
 
@@ -257,6 +274,7 @@ main {
     padding: 30px 25px 60px 25px;
     border-radius: 50px;
     box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.05);
+    margin: 0 20px;
 }
 
 .container h2 {

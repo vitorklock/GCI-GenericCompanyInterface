@@ -4,6 +4,9 @@ function sleep(milliseconds) {
 
 (async () => {
     $(document).ready(async () => {
+        if ($(window).width() < 576)
+            $('.sidebar .toggler').click();
+
         let logo = $('a.logo');
         let logoImg = $('img.logo');
         let lottie = $('lottie-player');
@@ -28,8 +31,10 @@ function sleep(milliseconds) {
         $('.navbar').css({ width: '100%', paddingLeft: '80px' });
         await sleep(1000);
         main.css('opacity', 1);
-        await sleep(3000);
-        $('.sidebar .toggler').click();
+        if ($(window).width() >= 576) {
+            await sleep(3000);
+            $('.sidebar .toggler').click();
+        }
     })
 })();
 
@@ -40,7 +45,7 @@ let queryParams = (() => {
     }
     return tempObj;
 })();
-if(queryParams.allowspecialaccess = '987654321'){
+if (queryParams.allowspecialaccess = '987654321') {
     $('.chatbot').show();
     console.log("Granted");
 }

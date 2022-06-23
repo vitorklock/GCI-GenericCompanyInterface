@@ -89,13 +89,31 @@
         <script>
             var sidebarShown = true;
             function toggleSidebar() {
+                $(window).resize(() => {
+                    $('.sidebar').css({ width: 0 })
+                        .removeClass('shown');
+                    $('.sidebar').css({ position: 'relative' });
+                    $('.wrapper').css('width', '100vw');
+                    sidebarShown = false;
+                })
+
                 if (sidebarShown) {
-                    $('.sidebar').css('width', '0').removeClass('shown');
+                    $('.sidebar').css({ width: 0 })
+                        .removeClass('shown');
+                    (async () => {
+                        await sleep(400);
+                        $('.sidebar').css({ position: 'relative' });
+                    })()
                     $('.wrapper').css('width', '100vw');
                     sidebarShown = false;
                 } else {
-                    $('.sidebar').css('width', '60px').addClass('shown');
-                    $('.wrapper').css('width', 'calc(100vw - 60px)');
+                    if ($(window).width() >= 576) {
+                        $('.sidebar').css('width', '60px').addClass('shown');
+                        $('.wrapper').css('width', 'calc(100vw - 60px)');
+                    } else {
+                        $('.sidebar').css({ width: '100vw', position: 'fixed' })
+                            .addClass('shown');
+                    }
                     sidebarShown = true;
                 }
             }
