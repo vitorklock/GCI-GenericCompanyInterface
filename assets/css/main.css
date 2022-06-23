@@ -117,28 +117,29 @@ body {
 
 .sidebar button:not(.toggler) {
     height: 60px;
-    width: 100%;
+    width: 60px;
     background: transparent;
     border: none;
     padding: 10px;
-    transform: scale(0.9);
     cursor: pointer;
-}
-.sidebar button:not(.toggler):hover {
-    transform: scale(1);
-}
-
-.sidebar button:not(.toggler):active {
-    transform: scale(0.6);
 }
 
 .sidebar button:not(.toggler) img {
     height: 100%;
     width: auto;
+    transform: scale(0.9);
 }
 
- /* SCROLLBAR */
- .sidebar::-webkit-scrollbar {
+.sidebar button:not(.toggler):hover img {
+    transform: scale(1);
+}
+
+.sidebar button:not(.toggler):active img{
+    transform: scale(0.6);
+}
+
+/* SCROLLBAR */
+.sidebar::-webkit-scrollbar {
     width: 5px;
 }
 
@@ -154,7 +155,7 @@ body {
     background-color: white;
 }
 
-div.logo {
+a.logo {
     animation: shrinkToCorner 2s linear;
     width: 400px;
     height: 400px;
@@ -166,19 +167,20 @@ div.logo {
     transform: translate(-50%, -50%);
     overflow: hidden;
     transition: all 1s;
+    display: block;
 }
 
 @media (max-width: 460px) {
-    div.logo {
+    a.logo {
         width: calc(100vw - 60px);
         height: calc(100vw - 60px);
     }
 
-    div.logo span {
+    a.logo span {
         font-size: 60px;
     }
 
-    div.logo span small {
+    a.logo span small {
         font-size: 24px;
         line-height: 26px;
     }
@@ -188,7 +190,7 @@ div.logo {
     }
 }
 
-div.logo span {
+a.logo span {
     animation: opacityReveal 0.6s;
     position: absolute;
     right: 0;
@@ -206,14 +208,14 @@ div.logo span {
     letter-spacing: -4px;
 }
 
-div.logo span small {
+a.logo span small {
     line-height: 32px;
     font-size: 30px;
     display: block;
     letter-spacing: -1px;
 }
 
-div.logo lottie-player {
+a.logo lottie-player {
     position: absolute;
     top: 0;
     left: -20%;
@@ -252,13 +254,14 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 50px 25px;
+    padding: 30px 25px 60px 25px;
     border-radius: 50px;
     box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.05);
 }
 
-.containe h2{
-
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .container .card {
@@ -269,6 +272,7 @@ main {
     color: var(--cinza-600);
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .container .card:hover {

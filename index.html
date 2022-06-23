@@ -35,7 +35,7 @@
             <h1>GCI <span>&nbsp;- Generic Company Interface</span></h1>
         </nav>
     </header>
-    <div class="logo">
+    <a href="./" class="logo">
         <span>
             GCI
             <br />
@@ -45,7 +45,7 @@
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_urtkfczm.json" background="transparent"
             speed="1"></lottie-player>
-    </div>
+    </a>
     <main>
         <nav class="sidebar shown">
             <button class="toggler" onclick="toggleSidebar()">
@@ -104,10 +104,18 @@
 
             <div class="container">
                 <h2>Nossos <br /> desenvolvimentos</h2>
-                <a class="card" href="https://www.notion.so/d0f40dff255c46a88dff2acb6d537c02?v=350d70096fa7427ea06392908e6b57d8" target="_blank">
+                <a class="card"
+                    href="https://www.notion.so/d0f40dff255c46a88dff2acb6d537c02?v=350d70096fa7427ea06392908e6b57d8"
+                    target="_blank">
                     NOTION - Banco de processos
                 </a>
-                <a href="" class="card">
+                <a href="https://prezi.com/view/dTSoDz4Tb3Pm51HTm2A7/" class="card">
+                    Apresentação no Prezi
+                </a>
+                <a class="card chatbot" onclick="showChatbot()" style="display: none;">
+                    Chatbot
+                </a>
+                <!-- <a href="" class="card">
                     dadsadasdsadasdas
                 </a>
                 <a href="" class="card">
@@ -118,57 +126,11 @@
                 </a>
                 <a href="" class="card">
                     dadsadasdsadasdas
-                </a>
-                <a href="" class="card">
-                    dadsadasdsadasdas
-                </a>
-                <a href="" class="card">
-                    dadsadasdsadasdas
-                </a>
+                </a> -->
             </div>
         </div>
     </main>
+    <script src="./assets/js/script.js"></script>
 </body>
-
-
-
-<script>
-    function sleep(milliseconds) {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-    }
-
-    (async () => {
-        $(document).ready(async () => {
-            let logo = $('div.logo');
-            let logoImg = $('img.logo');
-            let lottie = $('lottie-player');
-            let gciSpan = $('div.logo>span');
-            let logoSpan = $('div.logo span');
-            let main = $('main');
-            await sleep(2000);
-            lottie.trigger('play');
-            await sleep(2000);
-            gciSpan.css('opacity', 0);
-            logoImg.css('opacity', 1);
-            await sleep(2000);
-            lottie.css('display', 'none');
-            gciSpan.css('display', 'none');
-            logo.css({
-                top: '40px',
-                left: '20px',
-                width: '50px',
-                height: '50px',
-                transform: ' translate(0,-50%)',
-            })
-            await sleep(1000);
-            $('.navbar').css({ width: '100%', paddingLeft: '80px' });
-            await sleep(1000);
-            main.css('opacity', 1);
-            await sleep(3000);
-            $('.sidebar .toggler').click();
-        })
-    })();
-
-</script>
 
 </html>
