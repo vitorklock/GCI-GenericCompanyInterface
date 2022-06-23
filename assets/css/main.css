@@ -38,6 +38,10 @@ body {
     }
 }
 
+.chatbot {
+    display: none;
+}
+
 .navbar {
     animation: expand 0.8s linear;
     height: 80px;
@@ -121,6 +125,7 @@ body {
         justify-content: space-evenly;
         padding: 20px 30px;
     }
+
     .sidebar.shown .toggler {
         left: calc(100% - 66px);
         top: 20px;
