@@ -27,6 +27,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/pages/index.css">
 </head>
 
 <body>
@@ -48,7 +49,7 @@
     </a>
     <main>
         <nav class="sidebar shown">
-            <button class="toggler" onclick="toggleSidebar()">
+            <button class="toggler" onclick="SIDEBAR.toggle()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path
@@ -56,99 +57,35 @@
                 </svg>
             </button>
             <button>
-                <img src="./assets/images/icons/placeholder1.svg" alt="">
+                <img src="./assets/images/icons/github.svg" alt="Github">
             </button>
             <button>
-                <img src="./assets/images/icons/placeholder2.svg" alt="">
+                <img src="./assets/images/icons/unijui.png" alt="Unijui">
             </button>
-            <button>
-                <img src="./assets/images/icons/placeholder3.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder4.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder5.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder1.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder2.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder3.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder4.svg" alt="">
-            </button>
-            <button>
-                <img src="./assets/images/icons/placeholder5.svg" alt="">
+            <button id="web-btn">
+                <img src="./assets/images/icons/globe.svg" alt="Site publicado">
             </button>
         </nav>
-        <script>
-            var sidebarShown = true;
-            function toggleSidebar() {
-                $(window).resize(() => {
-                    $('.sidebar').css({ width: 0 })
-                        .removeClass('shown');
-                    $('.sidebar').css({ position: 'relative' });
-                    $('.wrapper').css('width', '100vw');
-                    sidebarShown = false;
-                })
-
-                if (sidebarShown) {
-                    $('.sidebar').css({ width: 0 })
-                        .removeClass('shown');
-                    (async () => {
-                        await sleep(400);
-                        $('.sidebar').css({ position: 'relative' });
-                    })()
-                    $('.wrapper').css('width', '100vw');
-                    sidebarShown = false;
-                } else {
-                    if ($(window).width() >= 576) {
-                        $('.sidebar').css('width', '60px').addClass('shown');
-                        $('.wrapper').css('width', 'calc(100vw - 60px)');
-                    } else {
-                        $('.sidebar').css({ width: '100vw', position: 'fixed' })
-                            .addClass('shown');
-                    }
-                    sidebarShown = true;
-                }
-            }
-        </script>
         <div class="wrapper">
-
-            <div class="container">
-                <h2>Nossos <br /> desenvolvimentos</h2>
-                <a class="card"
-                    href="https://www.notion.so/d0f40dff255c46a88dff2acb6d537c02?v=350d70096fa7427ea06392908e6b57d8"
-                    target="_blank">
-                    NOTION - Banco de processos
-                </a>
-                <a href="https://prezi.com/p/feh54gbmihir/generic-company-interface-gci/" class="card">
-                    Apresentação no Prezi
-                </a>
-                <a class="card chatbot" onclick="showChatbot()">
-                    Chatbot
-                </a>
-                <!-- <a href="" class="card">
-                    dadsadasdsadasdas
-                </a>
-                <a href="" class="card">
-                    dadsadasdsadasdas
-                </a>
-                <a href="" class="card">
-                    dadsadasdsadasdas
-                </a>
-                <a href="" class="card">
-                    dadsadasdsadasdas
-                </a> -->
+            <div id="content">
+                <div class="article">
+                    <div class="sections"></div>
+                    <div class="text"></div>
+                </div>
+                <aside>
+                    <div class="content"></div>
+                    <div class="content"></div>
+                    <div class="content"></div>
+                </aside>
             </div>
         </div>
     </main>
-    <script src="./assets/js/script.js"></script>
+
+    <script src="./assets/js/consts.js"></script>
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/sidebar.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

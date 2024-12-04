@@ -4,24 +4,33 @@
 
     --cinza-400: #f2f2f2;
     --cinza-600: #615f5f;
+
+    --navbar-height: 80px;
+    --sidebar-width: 60px;
 }
 
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body,
+main {
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body {
     padding: 0;
     margin: 0;
     color: #4e4e4e;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
 }
 
 body {
     background: linear-gradient(138deg, rgba(139, 133, 231, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    height: 100vh;
-    width: 100vw;
     /* display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +49,7 @@ body {
 
 .navbar {
     animation: expand 0.8s linear;
-    height: 80px;
+    height: var(--navbar-height);
     position: fixed;
     top: 0;
     left: 0;
@@ -63,10 +72,10 @@ body {
 }
 
 .sidebar {
-    height: calc(100vh - 80px);
+    height: calc(100% - 80px);
     background: var(--cinza-400);
     margin-top: 80px;
-    width: 60px;
+    width: var(--sidebar-width);
     box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3);
     overflow: hidden;
     transition: all 0.4s;
@@ -190,8 +199,8 @@ a.logo {
 
 @media (max-width: 460px) {
     a.logo {
-        width: calc(100vw - 60px);
-        height: calc(100vw - 60px);
+        width: calc(100% - 60px);
+        height: calc(100% - 60px);
     }
 
     a.logo span {
@@ -255,45 +264,13 @@ main {
 }
 
 .wrapper {
-    width: calc(100% - 60px);
-    height: calc(100vh - 80px);
-    margin-top: 80px;
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--navbar-height));
+    margin-top: var(--navbar-height);
+    padding: 30px;
     transition: all 0.4s;
-    /* TEMP */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* TEMP */
-}
-
-.container {
-    background-color: var(--cinza-400);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 30px 25px 60px 25px;
-    border-radius: 50px;
-    box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.05);
-    margin: 0 20px;
-}
-
-.container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.container .card {
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--cinza-600);
-    text-decoration: none;
-    font-weight: 500;
-    color: var(--cinza-600);
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-}
-
-.container .card:hover {
-    text-decoration: underline;
 }
